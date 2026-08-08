@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <world name="swarm_runway">
+    <physics name="1ms" type="ignored">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors"/>
+
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Sun</uri>
+    </include>
+
+    <include>
+      <uri>model://runway</uri>
+    </include>
+
+    <include>
+      <uri>model://iris_with_ardupilot</uri>
+      <name>iris_1</name>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://iris_with_ardupilot</uri>
+      <name>iris_2</name>
+      <pose>0 2 0 0 0 0</pose>
+      <plugin name="ArduPilotPlugin" filename="ArduPilotPlugin">
+    <fdm_port_in>9012</fdm_port_in>
+
+    <connectionTimeoutMaxCount>30</connectionTimeoutMaxCount>
+
+    <lock_step>1</lock_step>
+    </plugin>
+    </include>
+
+  </world>
+</sdf>

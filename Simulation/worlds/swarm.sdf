@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <world name="swarm_world">
+    <physics name="1ms" type="ignored">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>0.4</real_time_factor>
+    </physics>
+    
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Sun</uri>
+    </include>
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Ground Plane</uri>
+    </include>
+
+    <include>
+      <uri>model://iris_with_ardupilot</uri>
+      <name>drone1</name>
+      <pose>0 0 0.5 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://iris_2</uri>
+      <name>drone2</name>
+      <pose>0 2 0.5 0 0 0</pose>
+    </include>
+
+  </world>
+</sdf>

@@ -1,0 +1,221 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <world name="iris_runway">
+    <physics name="1ms" type="ignore">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"></plugin>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"></plugin>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"></plugin>
+    <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"></plugin>
+    <plugin filename="gz-sim-navsat-system" name="gz::sim::systems::NavSat"></plugin>
+
+    <scene>
+      <ambient>1.0 1.0 1.0</ambient>
+      <background>0.8 0.8 0.8</background>
+      <sky></sky>
+    </scene>
+
+    <spherical_coordinates>
+      <latitude_deg>-35.363262</latitude_deg>
+      <longitude_deg>149.165237</longitude_deg>
+      <elevation>584</elevation>
+      <heading_deg>0</heading_deg>
+      <surface_model>EARTH_WGS84</surface_model>
+    </spherical_coordinates>
+
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.8 0.8 0.8 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    
+    <include>
+      <uri>model://runway</uri>
+      <pose degrees="true">-29 545 0 0 0 363</pose>
+    </include>
+
+    <include>
+      <uri>model://iris_master</uri>
+      <pose degrees="true">0 0 0.195 0 0 90</pose>
+    </include>
+
+    <include>
+      <name>slave_1_model</name>
+      <uri>model://iris_slave_1</uri>
+      <pose degrees="true">0 2 0.195 0 0 90</pose>
+    </include>
+    
+    <include>
+      <name>slave_2_model</name>
+      <uri>model://iris_slave_2</uri>
+      <pose degrees="true">2 2 0.195 0 0 90</pose>
+    </include>
+    
+    <include>
+      <name>slave_3_model</name>
+      <uri>model://iris_slave_3</uri>
+      <pose degrees="true">-2 2 0.195 0 0 90</pose>
+    </include>
+
+    <model name="plastic_mine_1">
+      <pose>0 5 0.01 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry><cylinder><radius>0.15</radius><length>0.03</length></cylinder></geometry>
+          <material><ambient>1.0 0.5 0.0 1</ambient><diffuse>1.0 0.5 0.0 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="plastic_mine_2">
+      <pose>0.8 13 0.01 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry><cylinder><radius>0.15</radius><length>0.03</length></cylinder></geometry>
+          <material><ambient>1.0 0.5 0.0 1</ambient><diffuse>1.0 0.5 0.0 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="plastic_mine_3">
+      <pose>-0.6 15 0.01 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry><cylinder><radius>0.15</radius><length>0.03</length></cylinder></geometry>
+          <material><ambient>1.0 0.5 0.0 1</ambient><diffuse>1.0 0.5 0.0 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    
+    <model name="plastic_mine_4">
+      <pose>1.8 11 0.01 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry><cylinder><radius>0.15</radius><length>0.03</length></cylinder></geometry>
+          <material><ambient>1.0 0.5 0.0 1</ambient><diffuse>1.0 0.5 0.0 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="plastic_mine_5">
+      <pose>-0.8 8 0.01 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry><cylinder><radius>0.15</radius><length>0.03</length></cylinder></geometry>
+          <material><ambient>1.0 0.5 0.0 1</ambient><diffuse>1.0 0.5 0.0 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="plastic_mine_6">
+      <pose>-1.6 18 0.01 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry><cylinder><radius>0.15</radius><length>0.03</length></cylinder></geometry>
+          <material><ambient>1.0 0.5 0.0 1</ambient><diffuse>1.0 0.5 0.0 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    
+    <model name="plastic_mine_7">
+      <pose>2.1 15 0.01 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry><cylinder><radius>0.15</radius><length>0.03</length></cylinder></geometry>
+          <material><ambient>1.0 0.5 0.0 1</ambient><diffuse>1.0 0.5 0.0 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+
+    <model name="plastic_mine_8">
+      <pose>0 10 0.01 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry><cylinder><radius>0.15</radius><length>0.03</length></cylinder></geometry>
+          <material><ambient>1.0 0.5 0.0 1</ambient><diffuse>1.0 0.5 0.0 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="plastic_mine_9">
+      <pose>-2.1 9 0.01 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry><cylinder><radius>0.15</radius><length>0.03</length></cylinder></geometry>
+          <material><ambient>1.0 0.5 0.0 1</ambient><diffuse>1.0 0.5 0.0 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+
+    <model name="plastic_mine_10">
+      <pose>2.2 16 0.01 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry><cylinder><radius>0.15</radius><length>0.03</length></cylinder></geometry>
+          <material><ambient>1.0 0.5 0.0 1</ambient><diffuse>1.0 0.5 0.0 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+
+  <model name="plastic_mine_11">
+      <pose>-1.1 14 0.01 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry><cylinder><radius>0.15</radius><length>0.03</length></cylinder></geometry>
+          <material><ambient>1.0 0.5 0.0 1</ambient><diffuse>1.0 0.5 0.0 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="plastic_mine_12">
+      <pose>-2.3 18 0.01 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry><cylinder><radius>0.15</radius><length>0.03</length></cylinder></geometry>
+          <material><ambient>1.0 0.5 0.0 1</ambient><diffuse>1.0 0.5 0.0 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="plastic_mine_13">
+      <pose>1.8 16 0.01 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry><cylinder><radius>0.15</radius><length>0.03</length></cylinder></geometry>
+          <material><ambient>1.0 0.5 0.0 1</ambient><diffuse>1.0 0.5 0.0 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>
