@@ -1,4 +1,4 @@
-# Gujcost Robofest 6.0 — Aerial Robotics: Minefield Navigation
+# Gujcost Robofest 5.0 — Aerial Robotics: Minefield Navigation
 
 **Team IIT BBS** · Autonomous 3-drone swarm for thermal mine detection
 
